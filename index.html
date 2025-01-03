@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Wallet</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="customAlert" class="hidden"></div>
+  <div class="container">
+    <h1 class="title">🚗 Road Wallet</h1>
+    <p class="total-expenses">Total Expenses: <span id="totalExpenses">$0</span></p>
+    <button id="manageTravelers" class="btn manage-btn">👥 Manage Travelers</button>
+
+    <section class="add-expense">
+      <h2>Add Expense</h2>
+      <form id="expenseForm">
+        <label for="category">Category:</label>
+        <select id="category" required>
+          <option value="" disabled selected>Select a category</option>
+          <option value="Food" selected>Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Accommodation">Accommodation</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+        </select>
+        
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required>
+        
+        <button type="submit" class="btn add-btn">+ Add Expense</button>
+      </form>
+    </section>
+
+    <section class="expense-history">
+      <h2>Expense History</h2>
+      <ul id="expenseList">
+        <!-- Dynamic content will appear here -->
+      </ul>
+    </section>
+  </div>
+
+  <!-- Modal for Managing Travelers -->
+  <div id="travelerModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close-btn">&times;</span>
+      <h2>Manage Travelers</h2>
+      <form id="travelerForm">
+        <label for="travelerName">Traveler Name:</label>
+        <input type="text" id="travelerName" placeholder="Enter traveler name" required>
+        <button type="submit" class="btn add-btn">+ Add Traveler</button>
+      </form>
+      <ul id="travelerList">
+        <!-- Traveler names will appear here -->
+      </ul>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>

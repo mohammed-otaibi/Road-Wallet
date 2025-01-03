@@ -1,0 +1,253 @@
+/* General Reset */
+html{  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #eaf4f4, #ffffff);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; /* تمركز الحاوية في المنتصف */
+  position: relative; /* ضمان بقاء المحتويات في مكانها */
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.total-expenses {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  color: white;
+  background-color: #007b5e;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005f4a;
+}
+
+.add-expense,
+.expense-history {
+  margin-top: 20px;
+}
+
+.add-expense h2,
+.expense-history h2 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.add-btn {
+  background-color: #28a745;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.expense-history ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px; /* تعيين ارتفاع ثابت للقائمة */
+  overflow-y: auto; /* إضافة شريط تمرير عمودي */
+  border: 1px solid #ddd; /* تحسين المظهر بحد */
+  padding: 10px; /* إضافة مسافة داخلية */
+  border-radius: 5px; /* تحسين الزوايا */
+}
+
+.expense-history li {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1em;
+}
+
+.expense-history ul li {
+  margin-bottom: 10px; /* إضافة مسافة بين العناصر */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* نمط للعنصر li */
+li {
+  display: flex; /* استخدم Flexbox لترتيب المحتوى أفقيًا */
+  justify-content: space-between; /* توزيع العناصر بالتساوي */
+  align-items: center; /* محاذاة العناصر عموديًا */
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* نمط زر الحذف */
+button {
+  background-color: #cccccc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة */
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  max-width: 400px; /* تحديد عرض ثابت للنافذة */
+  width: 90%; /* لضمان استجابة التصميم */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* تحسين الظل */
+  overflow: hidden; /* منع تجاوز المحتويات */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#travelerList {
+  max-height: 200px; /* تعيين ارتفاع ثابت للقائمة */
+  overflow-y: auto; /* إضافة شريط تمرير عمودي */
+  border: 1px solid #ddd; /* تحسين المظهر بحد */
+  padding: 10px; /* إضافة مسافة داخلية */
+  border-radius: 5px; /* تحسين الزوايا */
+  background-color: #f9f9f9; /* تحسين المظهر */
+}
+
+
+#travelerList li {
+  margin-bottom: 10px; /* مسافة بين العناصر */
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#customAlert {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff; /* لون الخلفية */
+  color: white; /* لون النص */
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#customAlert.visible {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
